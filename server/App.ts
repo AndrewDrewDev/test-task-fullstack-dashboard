@@ -1,9 +1,11 @@
 import express from 'express'
+import router from "./routes";
+import errorResponseHandler from "./error/errorResponseHandler";
 
 const PORT = process.env.PORT || '3000'
 const app = express()
 
-app.use()
+app.use('/api', router)
 
 const start = async () => {
   try {
@@ -12,5 +14,7 @@ const start = async () => {
     console.log(error)
   }
 }
+
+app.use(errorResponseHandler)
 
 start()
