@@ -5,16 +5,16 @@ import ErrorHandler from "../error/ErrorHandler";
 import {ErrorHandle} from "../error/types";
 import {Dataset} from "../model/types";
 
-const getDataController = async (
+const getErrorLastThreeDayController = async (
   req: Request,
   res: Response,
   next: NextFunction):
-  ResponseHandler<Dataset['data']>  => {
+  ResponseHandler<Dataset['errors_last_3days']> => {
   try {
     return res.status(200).json({
       code: 200,
-      msg: 'Data received successfully!',
-      data: dataset.data,
+      msg: 'Errors last 3days received successfully!',
+      data: dataset.errors_last_3days,
     })
   } catch (e) {
     const error = e as ErrorHandle
@@ -22,4 +22,4 @@ const getDataController = async (
   }
 }
 
-export default getDataController
+export default getErrorLastThreeDayController
