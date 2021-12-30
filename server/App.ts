@@ -3,7 +3,7 @@ import router from "./routes";
 import errorResponseHandler from "./error/errorResponseHandler";
 import pageNotFoundMiddleware from "./middleware/pageNotFoundMiddleware";
 
-const PORT = process.env.PORT || '3000'
+const PORT = process.env.PORT || '8080'
 const app = express()
 
 app.use('/api', router)

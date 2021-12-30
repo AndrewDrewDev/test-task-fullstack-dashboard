@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./server/App.ts"
+    "start": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "nodemon ./server/App.ts",
+    "dev:client": "cd client && yarn start"
   },
   "keywords": [],
   "author": "Andrew Dryuk",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.5.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "ts-node": "^10.4.0",

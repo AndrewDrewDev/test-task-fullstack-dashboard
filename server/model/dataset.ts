@@ -44,7 +44,6 @@ export const dataset = {
       "ctr_yesterday": 1.06052388326287,
       "searches_current_yesterday": 2188541,
       "bookings_previous_last_3days": 8647,
-      "zeroes_last_3days": 5.55262854787825,
       "clicks_previous_last_hour": 784,
       "timeout_last_3days": 0.122851836321131,
       "errors_last_3days": 0.143953287057117,
