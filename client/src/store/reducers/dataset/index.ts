@@ -1,11 +1,11 @@
 import {DatasetActionEnum, DatasetActions, DatasetState} from "./types";
 
 const initialState: DatasetState = {
-  analytics_data: {},
-  today: {},
+  errors_today: {},
   errors_last_hour: {},
   errors_yesterday: {},
   errors_last_3days: {},
+  analytics_data: {},
 } as DatasetState
 
 
@@ -16,6 +16,9 @@ export const datasetReducer = (
   switch (action.type) {
     case DatasetActionEnum.SET_DATA: {
       return {...state, analytics_data: action.payload}
+    }
+    case DatasetActionEnum.SET_TODAY: {
+      return {...state, errors_today: action.payload}
     }
     case DatasetActionEnum.SET_ERRORS_LAST_HOUR: {
       return {...state, errors_last_hour: action.payload}

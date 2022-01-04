@@ -4,17 +4,25 @@ import {DatasetState} from "../store/reducers/dataset/types";
 import {useAction} from "./useAction";
 
 export const useFetchAllData = () => {
-  const {setData, setErrorsLastHour, setErrorsYesterday, setErrorsLast3Day} = useAction();
+  const {
+    setAnalyticsData,
+    setErrorsLastHour,
+    setErrorsYesterday,
+    setErrorsLast3Day,
+    setErrorsToday
+  } = useAction();
 
   useEffect(() => {
-    // preliminary load all data from server
+    // Preliminary load all data from server
     (async () => {
-      const data = await fetchData<DatasetState["analytics_data"]>("api/data");
+      const errors_today = await fetchData<DatasetState["errors_today"]>("api/errors/errors_today");
       const errors_last_3days = await fetchData<DatasetState["errors_last_3days"]>("api/errors/errors_last_3_day");
-      const errors_yesterday = await fetchData<DatasetState["errors_yesterday"]>("api/data/errors_yesterday");
+      const errors_yesterday = await fetchData<DatasetState["errors_yesterday"]>("api/errors/errors_yesterday");
       const errors_last_hour = await fetchData<DatasetState["errors_last_hour"]>("api/errors/errors_last_hour");
+      const analytics_data = await fetchData<DatasetState["analytics_data"]>("api/data");
 
-      setData(data)
+      setErrorsToday(errors_today)
+      setAnalyticsData(analytics_data)
       setErrorsLast3Day(errors_last_3days)
       setErrorsYesterday(errors_yesterday)
       setErrorsLastHour(errors_last_hour)

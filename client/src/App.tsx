@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.scss";
-import { Header } from "./components/Header";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import { CartContent } from "./components/CartContent";
-import { TabsNamesEnum } from "./types";
+import {Header} from "./components/Header";
+import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import {ErrorsInfoSection} from "./components/ErrorsInfoSection";
+import {TabsNamesEnum} from "./types";
 import {useFetchAllData} from "./hooks/useFetchAllData";
 
 const tabProps = {
@@ -17,28 +17,36 @@ function App() {
 
   return (
     <div className="card">
-      <Header />
+      <Header/>
       <main>
         <Tabs>
           <nav>
             <TabList className="tab-list">
-              <Tab {...tabProps}>Last hour</Tab>
-              <Tab {...tabProps}>Today</Tab>
-              <Tab {...tabProps}>Yesterday</Tab>
-              <Tab {...tabProps}>Last 3 day</Tab>
+              <Tab {...tabProps}>
+                Last Hour
+              </Tab>
+              <Tab {...tabProps}>
+                Today
+              </Tab>
+              <Tab {...tabProps}>
+                Yesterday
+              </Tab>
+              <Tab {...tabProps}>
+                Last 3 day
+              </Tab>
             </TabList>
           </nav>
-          <TabPanel className="">
-            <CartContent tabName={TabsNamesEnum.errors_last_hour} />
+          <TabPanel>
+            <ErrorsInfoSection tabName={TabsNamesEnum.errors_last_hour}/>
           </TabPanel>
           <TabPanel>
-            <CartContent tabName={TabsNamesEnum.today} />
+            <ErrorsInfoSection tabName={TabsNamesEnum.today}/>
           </TabPanel>
           <TabPanel>
-            <CartContent tabName={TabsNamesEnum.errors_yesterday} />
+            <ErrorsInfoSection tabName={TabsNamesEnum.errors_yesterday}/>
           </TabPanel>
           <TabPanel>
-            <CartContent tabName={TabsNamesEnum.errors_last_3_day} />
+            <ErrorsInfoSection tabName={TabsNamesEnum.errors_last_3_day}/>
           </TabPanel>
         </Tabs>
       </main>
