@@ -1,0 +1,38 @@
+.errors-average {
+  padding-top: 48px;
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media (max-width: 767px) {
+    padding-top: 20px;
+    justify-content: space-around;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+    background-color: #8BC34A;
+    border-radius: 50%;
+    margin: 8px 8px 0 0;
+  }
+
+  &__header {
+    color: #4A4A4A;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &__value {
+    color: #A0B0B9;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+}
