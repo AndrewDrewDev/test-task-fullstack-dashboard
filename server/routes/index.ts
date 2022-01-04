@@ -7,7 +7,7 @@ import getErrorLastHourController from "../controllers/getErrorLastHourControlle
 const router = Router()
 
 router.get('/data', getDataController)
-router.get('/errors/last_3_day', getErrorLastThreeDayController)
+router.get('/errors/errors_last_3_day', getErrorLastThreeDayController)
 router.get('/errors/errors_yesterday',getErrorYesterdayController)
 router.get('/errors/errors_last_hour', getErrorLastHourController)
 
