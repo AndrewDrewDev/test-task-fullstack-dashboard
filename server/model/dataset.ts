@@ -15,15 +15,43 @@ export const dataset = {
   ],
   "errors_yesterday": [
     {
+      "count": 305,
+      "code": 599
+    },
+    {
       "count": 615,
       "code": null
+    }
+  ],
+  "errors_last_hour": [
+    {
+      "count": 615,
+      "code": 301
     },
     {
       "count": 305,
       "code": 599
+    },
+    {
+      "count": 1780,
+      "code": null
     }
   ],
-  "errors_last_hour": [],
+  "errors_today": [
+    {
+      "count": 101,
+      "code": 501
+    },
+    {
+      "count": 320,
+      "code": 522
+    },
+    {
+      "count": 50,
+      "code": 503
+    }
+
+  ],
   "data": [
     {
       "bookings_current_last_3days": 7556,

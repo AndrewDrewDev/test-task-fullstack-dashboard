@@ -1,6 +1,9 @@
+type ErrorDataBody = { count: number, code: number | null }[]
+
 export interface Dataset {
-  errors_last_3days: { count: number, code: number } | { count: number, code: null }[],
-  errors_yesterday: { count: number, code: null } | { count: number, code: number }[],
-  errors_last_hour: never[],
-  data: {[key: string]: number | null}[]
+  errors_last_3days: ErrorDataBody,
+  errors_yesterday: ErrorDataBody,
+  errors_last_hour: ErrorDataBody,
+  errors_today: ErrorDataBody,
+  data: { [key: string]: number | null }[]
 }
