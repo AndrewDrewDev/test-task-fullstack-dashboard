@@ -1,35 +1,54 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
+import InfoBarItem from "./InfoBarItem";
+import {ErrorsPercentagedData, getPercentage} from "../../utils/getPercentage";
+
 import './ErrorsInfoBar.scss'
+import {colors} from "../../consts/colors";
+import {ErrorsResponseDataProps} from "../ErrorsInfoSection/types";
+import {getCodeTitle} from "../../utils/getCodeTitle";
+import {getErrorColor} from "../../utils/getErrorColor";
 
-const colors = {
-  base: ['#FFCC00', '#5856D5', '#2196F3'],
-  other: '#A0B0B9'
-}
+const ErrorsInfoBar: FC<ErrorsResponseDataProps> = ({responseData}) => {
+  const [details, setDetails] = useState<ErrorsPercentagedData[]>()
+  const {error, data} = responseData
 
-const ErrorsInfoBar = () => {
+  useEffect(() => {
+    if (data) {
+      setDetails(getPercentage(data))
+    }
+  }, [])
+
+  if (error) {
+    return <ErrorMessage children="Не удалось получить данные об ошибках!"/>
+  }
+
+  const dataNotFound = data !== undefined && data.length === 0
+  if (dataNotFound) {
+    return <ErrorMessage children="Данные об ошибках не найдены!"/>
+  }
+
   return (
     <div className="errors-info">
-      <Item color={colors.base[0]} percentWidth={50}/>
-      <Item color={colors.base[1]} percentWidth={25}/>
-      <Item color={colors.base[2]} percentWidth={25}/>
+      {details && details.map((item, i) => {
+        const {code, percentage, count} = item
+        return (
+          <InfoBarItem
+            key={percentage}
+            percentage={percentage}
+            title={getCodeTitle(code, count)}
+            color={getErrorColor(code, i)}
+            percentWidth={percentage}/>
+        )
+      })}
     </div>
   );
 };
 
-interface ItemProps {
-  percentWidth: number,
-  color: string
-}
-
-const Item: FC<ItemProps> = ({percentWidth, color}) => {
+const ErrorMessage: FC = ({children}) => {
   return (
-    <>
-      <div className="errors-info__item" style={
-        {
-          width: `${percentWidth}%`, backgroundColor: color
-        }
-      }/>
-    </>
+    <div className="errors-info__error">
+      {children}
+    </div>
   )
 }
 

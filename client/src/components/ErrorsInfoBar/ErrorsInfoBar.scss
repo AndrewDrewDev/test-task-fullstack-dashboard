@@ -1,15 +1,47 @@
 .errors-info {
+  padding-top: 15px;
   display: flex;
   width: 100%;
-  padding-top: 15px;
+  animation: growing ease-in-out 1s;
+
   &__item {
+    position: relative;
+    font-size: 0;
     height: 8px;
     margin-right: 1px;
+
     &:first-child {
       border-radius: 3px 0 0 3px;
     }
+
     &:last-child {
       border-radius: 0 3px 3px 0;
     }
+
+    &:hover {
+      border: 1px gray solid;
+      & > span {
+        font-size: 12px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        white-space: nowrap;
+      }
+    }
   }
+}
+
+@keyframes growing {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.errors-info__error {
+  padding-top: 15px;
+  font-size: 12px;
+  text-align: center;
 }
