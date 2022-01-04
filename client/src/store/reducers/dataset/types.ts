@@ -6,7 +6,7 @@ export interface DatasetState {
   errors_last_3days: ResponseBody<Dataset['errors_last_3days']>,
   errors_yesterday: ResponseBody<Dataset['errors_yesterday']>,
   errors_last_hour: ResponseBody<Dataset['errors_last_hour']>,
-  data: ResponseBody<Dataset['data']>,
+  analytics_data: ResponseBody<Dataset['analytics_data']>,
 }
 
 export enum DatasetActionEnum {
@@ -34,7 +34,7 @@ export interface SetErrorsYesterdayAction {
 
 export interface SetDataAction {
   type: DatasetActionEnum.SET_DATA
-  payload: DatasetState['data']
+  payload: DatasetState['analytics_data']
 }
 
 export type DatasetActions =

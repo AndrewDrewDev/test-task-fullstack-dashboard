@@ -9,7 +9,7 @@ export const useFetchAllData = () => {
   useEffect(() => {
     // preliminary load all data from server
     (async () => {
-      const data = await fetchData<DatasetState["data"]>("api/data");
+      const data = await fetchData<DatasetState["analytics_data"]>("api/data");
       const errors_last_3days = await fetchData<DatasetState["errors_last_3days"]>("api/errors/errors_last_3_day");
       const errors_yesterday = await fetchData<DatasetState["errors_yesterday"]>("api/data/errors_yesterday");
       const errors_last_hour = await fetchData<DatasetState["errors_last_hour"]>("api/errors/errors_last_hour");

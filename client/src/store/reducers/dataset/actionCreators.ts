@@ -7,7 +7,7 @@ import {
 } from "./types";
 
 export const DatasetActionCreators = {
-  setData: (payload: DatasetState['data']): SetDataAction => ({
+  setData: (payload: DatasetState['analytics_data']): SetDataAction => ({
     type: DatasetActionEnum.SET_DATA,
     payload
   }),
