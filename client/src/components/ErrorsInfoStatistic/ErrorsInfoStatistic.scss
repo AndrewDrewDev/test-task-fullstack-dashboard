@@ -1,0 +1,33 @@
+.errors-info-statistic {
+  display: flex;
+  margin-top: 24px;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  &__text {
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 767px) {
+    &__item {
+      padding-right: 15px;
+      justify-content: space-between;
+    }
+  }
+}
