@@ -5,14 +5,12 @@ export enum TabsNamesEnum {
   errors_last_hour,
 }
 
-type ErrorsBody =
-  { count: number, code: null }
-  | { count: number, code: number }[]
+export type ErrorsBody = { count: number, code: number | null }[]
 
 type AnalyticsDataBody = { [key: string]: number | null }[]
 
 export interface Dataset {
-  today: ErrorsBody,
+  errors_today: ErrorsBody,
   errors_last_3days: ErrorsBody,
   errors_yesterday: ErrorsBody,
   errors_last_hour: ErrorsBody,
