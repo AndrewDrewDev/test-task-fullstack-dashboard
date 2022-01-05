@@ -9,7 +9,6 @@
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "nodemon ./server/App.ts",
     "dev:client": "cd client && yarn start",
-    "install": "npm i && cd client && npm i",
     "format": "prettier --write \"server/**/*.(ts|tsx|js|jsx|css|html)\" \"client/**/*.(ts|tsx|js|jsx|css|html)\"",
     "deploy": "npm run build:server && git push heroku main:master"
   },
