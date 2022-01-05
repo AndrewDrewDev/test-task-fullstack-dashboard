@@ -1,22 +1,14 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import InfoBarItem from "./InfoBarItem";
-import {ErrorsPercentagedData, getPercentage} from "../../utils/getPercentage";
-
-import './ErrorsInfoBar.scss'
-import {colors} from "../../consts/colors";
+import {getPercentage} from "../../utils/getPercentage";
 import {ErrorsResponseDataProps} from "../ErrorsInfoSection/types";
 import {getCodeTitle} from "../../utils/getCodeTitle";
 import {getErrorColor} from "../../utils/getErrorColor";
 
-const ErrorsInfoBar: FC<ErrorsResponseDataProps> = ({responseData}) => {
-  const [details, setDetails] = useState<ErrorsPercentagedData[]>()
-  const {error, data} = responseData
+import './ErrorsInfoBar.scss'
 
-  useEffect(() => {
-    if (data) {
-      setDetails(getPercentage(data))
-    }
-  }, [])
+const ErrorsInfoBar: FC<ErrorsResponseDataProps> = ({responseData}) => {
+  const {error, data} = responseData
 
   if (error) {
     return <ErrorMessage children="Не удалось получить данные об ошибках!"/>
@@ -29,7 +21,7 @@ const ErrorsInfoBar: FC<ErrorsResponseDataProps> = ({responseData}) => {
 
   return (
     <div className="errors-info">
-      {details && details.map((item, i) => {
+      {data && getPercentage(data).map((item, i) => {
         const {code, percentage, count} = item
         return (
           <InfoBarItem

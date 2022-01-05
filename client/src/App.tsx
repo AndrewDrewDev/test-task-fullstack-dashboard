@@ -5,6 +5,7 @@ import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {ErrorsInfoSection} from "./components/ErrorsInfoSection";
 import {TabsNamesEnum} from "./types";
 import {useFetchAllData} from "./hooks/useFetchAllData";
+import AnalyticsData from "./components/CardData/CardData";
 
 const tabProps = {
   className: "tab-list__item",
@@ -49,6 +50,7 @@ function App() {
             <ErrorsInfoSection tabName={TabsNamesEnum.errors_last_3_day}/>
           </TabPanel>
         </Tabs>
+        <AnalyticsData/>
       </main>
     </div>
   );

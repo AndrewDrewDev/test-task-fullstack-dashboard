@@ -3,6 +3,11 @@
   margin-top: 24px;
   flex: 1 1 100%;
   flex-wrap: wrap;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    justify-content: space-around;
+  }
 
   &__item {
     display: flex;
@@ -27,7 +32,6 @@
   @media (max-width: 767px) {
     &__item {
       padding-right: 15px;
-      justify-content: space-between;
     }
   }
 }
