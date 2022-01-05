@@ -11,7 +11,7 @@
     "dev:client": "cd client && yarn start",
     "install": "npm i && cd client && npm i",
     "format": "prettier --write \"server/**/*.(ts|tsx|js|jsx|css|html)\" \"client/**/*.(ts|tsx|js|jsx|css|html)\"",
-    "deploy": "npm run build:server && git push heroku main:master"
+    "deploy": "npm run build:server && git push heroku master:main"
   },
   "keywords": [],
   "author": "Andrew Dryuk",
