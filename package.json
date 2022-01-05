@@ -1,0 +1,36 @@
+{
+  "name": "test-task-fullstack-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/App.js",
+  "scripts": {
+    "start": "node ./dist/App.js",
+    "build:server": "tsc",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "nodemon ./server/App.ts",
+    "dev:client": "cd client && yarn start",
+    "install": "npm i && cd client && npm i",
+    "format": "prettier --write \"server/**/*.(ts|tsx|js|jsx|css|html)\" \"client/**/*.(ts|tsx|js|jsx|css|html)\"",
+    "deploy": "npm run build:server && git push heroku main:master"
+  },
+  "keywords": [],
+  "author": "Andrew Dryuk",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.12",
+    "concurrently": "^6.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescipt": "^1.0.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.5",
+    "nodemon": "^2.0.15"
+  }
+}
