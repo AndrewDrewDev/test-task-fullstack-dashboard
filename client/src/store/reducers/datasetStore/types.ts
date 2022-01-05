@@ -7,6 +7,7 @@ export interface DatasetState {
   errors_yesterday: ResponseBody<Dataset['errors_yesterday']>,
   errors_last_hour: ResponseBody<Dataset['errors_last_hour']>,
   analytics_data: ResponseBody<Dataset['analytics_data']>,
+  pending: boolean
 }
 
 export enum DatasetActionEnum {
@@ -14,7 +15,8 @@ export enum DatasetActionEnum {
   SET_TODAY,
   SET_ERRORS_YESTERDAY,
   SET_ERRORS_LAST_HOUR,
-  SET_DATA
+  SET_DATA,
+  SET_PENDING
 }
 
 export interface SetErrorsTodayAction {
@@ -42,9 +44,15 @@ export interface SetDataAction {
   payload: DatasetState['analytics_data']
 }
 
+export interface SetPendingAction {
+  type: DatasetActionEnum.SET_PENDING
+  payload: DatasetState['pending']
+}
+
 export type DatasetActions =
   | SetErrorsTodayAction
   | SetErrorsLast3dayAction
   | SetErrorsLastHourAction
   | SetErrorsYesterdayAction
   | SetDataAction
+  | SetPendingAction

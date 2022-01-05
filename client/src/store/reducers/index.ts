@@ -1,4 +1,4 @@
-import {datasetReducer} from "./dataset";
+import {datasetReducer} from "./datasetStore";
 
 export default {
   data: datasetReducer

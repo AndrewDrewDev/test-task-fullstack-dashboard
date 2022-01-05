@@ -2,7 +2,7 @@ import {ErrorsBody, TabsNamesEnum} from "../types";
 import {useSelector} from "react-redux";
 import {rootState} from "../store";
 import {ResponseBody} from "../model/ResponceBody";
-import {errorFetchResponseMessage} from "../store/reducers/dataset/middleware";
+import {errorFetchResponseMessage} from "../store/reducers/datasetStore/middleware";
 
 export const useGetCurrentErrorResponseData = (tabName: TabsNamesEnum):  ResponseBody<ErrorsBody> => {
   const {errors_today, errors_last_hour, errors_yesterday, errors_last_3days} = useSelector(rootState)

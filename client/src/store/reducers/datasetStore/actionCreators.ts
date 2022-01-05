@@ -3,12 +3,16 @@ import {
   DatasetState,
   SetDataAction,
   SetErrorsLast3dayAction, SetErrorsLastHourAction, SetErrorsTodayAction,
-  SetErrorsYesterdayAction
+  SetErrorsYesterdayAction, SetPendingAction
 } from "./types";
 
 export const DatasetActionCreators = {
   setAnalyticsData: (payload: DatasetState['analytics_data']): SetDataAction => ({
     type: DatasetActionEnum.SET_DATA,
+    payload
+  }),
+  setPending: (payload: DatasetState['pending']): SetPendingAction => ({
+    type: DatasetActionEnum.SET_PENDING,
     payload
   }),
   setErrorsToday: (payload: DatasetState['errors_today']): SetErrorsTodayAction => ({

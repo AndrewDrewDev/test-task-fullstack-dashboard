@@ -3,7 +3,6 @@ import React, {FC} from 'react';
 import './ErrorsInfoStatistic.scss'
 import {ErrorsResponseDataProps} from "../ErrorsInfoSection/types";
 import {getCodeTitle} from "../../utils/getCodeTitle";
-import {colors} from "../../consts/colors";
 import {getErrorColor} from "../../utils/getErrorColor";
 
 const ErrorsInfoStatistic: FC<ErrorsResponseDataProps> = ({responseData}) => {
@@ -14,7 +13,7 @@ const ErrorsInfoStatistic: FC<ErrorsResponseDataProps> = ({responseData}) => {
       {data && data.map((item, i) => {
         const {code, count} = item
 
-        return <Item title={getCodeTitle(code, count)} color={getErrorColor(code, i)}/>
+        return <Item key={code} title={getCodeTitle(code, count)} color={getErrorColor(code, i)}/>
       })}
     </div>
   );

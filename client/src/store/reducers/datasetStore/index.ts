@@ -6,6 +6,7 @@ const initialState: DatasetState = {
   errors_yesterday: {},
   errors_last_3days: {},
   analytics_data: {},
+  pending: true
 } as DatasetState
 
 
@@ -16,6 +17,9 @@ export const datasetReducer = (
   switch (action.type) {
     case DatasetActionEnum.SET_DATA: {
       return {...state, analytics_data: action.payload}
+    }
+    case DatasetActionEnum.SET_PENDING: {
+      return {...state, pending: action.payload}
     }
     case DatasetActionEnum.SET_TODAY: {
       return {...state, errors_today: action.payload}
