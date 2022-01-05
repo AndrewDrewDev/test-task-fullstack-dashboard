@@ -18,7 +18,8 @@ TODO[Live Demo Link](#)
 
 ```shell
 # Install server/client dependencies
-npm run install
+npm i 
+cd client && npm i
 # Start Client and Server
 npm run dev
 ```
