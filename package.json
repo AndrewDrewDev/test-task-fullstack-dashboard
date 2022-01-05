@@ -6,7 +6,8 @@
   "scripts": {
     "start": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "nodemon ./server/App.ts",
-    "dev:client": "cd client && yarn start"
+    "dev:client": "cd client && yarn start",
+    "format": "prettier --write \"server/**/*.(ts|tsx|js|jsx|css|html)\" \"client/**/*.(ts|tsx|js|jsx|css|html)\""
   },
   "keywords": [],
   "author": "Andrew Dryuk",
@@ -17,6 +18,7 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
+    "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
     "typescipt": "^1.0.0",
     "typescript": "^4.5.4"

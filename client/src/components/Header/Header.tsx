@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import './Header.scss'
 
 const Header = () => {
@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       <h1>Main metrics</h1>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

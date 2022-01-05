@@ -1,15 +1,15 @@
-import {NextFunction, Request, Response} from "express";
-import {dataset} from "../model/dataset";
-import {ResponseHandler} from "../types";
-import ErrorHandler from "../error/ErrorHandler";
-import {ErrorHandle} from "../error/types";
-import {Dataset} from "../model/types";
+import { NextFunction, Request, Response } from 'express'
+import { dataset } from '../model/dataset'
+import { ResponseHandler } from '../types'
+import ErrorHandler from '../error/ErrorHandler'
+import { ErrorHandle } from '../error/types'
+import { Dataset } from '../model/types'
 
 const getDataController = async (
   req: Request,
   res: Response,
-  next: NextFunction):
-  ResponseHandler<Dataset['data']>  => {
+  next: NextFunction
+): ResponseHandler<Dataset['data']> => {
   try {
     return res.status(200).json({
       code: 200,

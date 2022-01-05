@@ -1,2 +1,1 @@
-export {default as CardData} from "./CardData";
-
+export { default as CardData } from './CardData'

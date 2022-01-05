@@ -1,19 +1,19 @@
-import React, {FC, ReactElement} from 'react';
-import cn from "classnames";
+import React, { FC, ReactElement } from 'react'
+import cn from 'classnames'
 
 export interface CardDataItemProps {
-  svgIcon: ReactElement,
-  mainTitle: string,
-  label?: string,
+  svgIcon: ReactElement
+  mainTitle: string
+  label?: string
   colorRed?: true
-  errorsYesterday: string | number | null,
-  errorsLastFriday: string | number | null,
-  detailsTitle: string[],
-  detailsDescription: string,
+  errorsYesterday: string | number | null
+  errorsLastFriday: string | number | null
+  detailsTitle: string[]
+  detailsDescription: string
   helpLinks: string[]
 }
 
-const CartDataItem: FC<CardDataItemProps> = (props) => {
+const CartDataItem: FC<CardDataItemProps> = props => {
   const {
     svgIcon,
     label,
@@ -23,7 +23,7 @@ const CartDataItem: FC<CardDataItemProps> = (props) => {
     errorsLastFriday,
     errorsYesterday,
     helpLinks,
-    colorRed
+    colorRed,
   } = props
 
   return (
@@ -31,21 +31,27 @@ const CartDataItem: FC<CardDataItemProps> = (props) => {
       <div className="card-data__main card-data__container">
         <div className="card-data__icon">
           {svgIcon}
-          <div className={cn('card-data__indicator', {
-            'card-data__background-red': colorRed
-          })}/>
+          <div
+            className={cn('card-data__indicator', {
+              'card-data__background-red': colorRed,
+            })}
+          />
         </div>
         <div>
           <div className="card-data__title">
-            <h2 className={cn('header text', {
-              'card-data__text-red': colorRed
-            })}>
+            <h2
+              className={cn('header text', {
+                'card-data__text-red': colorRed,
+              })}
+            >
               {mainTitle}
             </h2>
             {label && (
-              <div className={cn('card-data__label', {
-                'card-data__background-red': colorRed
-              })}>
+              <div
+                className={cn('card-data__label', {
+                  'card-data__background-red': colorRed,
+                })}
+              >
                 {label}
               </div>
             )}
@@ -63,18 +69,18 @@ const CartDataItem: FC<CardDataItemProps> = (props) => {
         </div>
       </div>
       <div className="card-data__details card-data__container">
-        <div className={cn('card-data__title_column', {
-          'card-data__text-red': colorRed
-        })}>
+        <div
+          className={cn('card-data__title_column', {
+            'card-data__text-red': colorRed,
+          })}
+        >
           {detailsTitle.map(textItem => (
             <div key={textItem} className="header">
               {textItem}
             </div>
           ))}
         </div>
-        <div className="card-data__description">
-          {detailsDescription}
-        </div>
+        <div className="card-data__description">{detailsDescription}</div>
         <div className="card-data__help">
           Help:
           {helpLinks.map(textItem => (
@@ -88,4 +94,4 @@ const CartDataItem: FC<CardDataItemProps> = (props) => {
   )
 }
 
-export default CartDataItem;
+export default CartDataItem

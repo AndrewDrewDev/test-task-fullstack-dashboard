@@ -1,1 +1,1 @@
-export {default as ErrorsInfoSection} from "./ErrorsInfoSection";
+export { default as ErrorsInfoSection } from './ErrorsInfoSection'

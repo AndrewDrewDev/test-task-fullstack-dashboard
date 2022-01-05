@@ -1,1 +1,1 @@
-export {default as ErrorsInfoStatistic} from './ErrorsInfoStatistic'
+export { default as ErrorsInfoStatistic } from './ErrorsInfoStatistic'

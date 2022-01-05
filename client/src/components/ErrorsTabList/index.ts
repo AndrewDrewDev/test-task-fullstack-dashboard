@@ -1,1 +1,1 @@
-export {default as ErrorsTabList} from './ErrorsTabList'
+export { default as ErrorsTabList } from './ErrorsTabList'

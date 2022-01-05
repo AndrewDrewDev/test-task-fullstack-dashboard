@@ -1,8 +1,8 @@
-import {ErrorsBody} from "../types";
+import { ErrorsBody } from '../types'
 
 export interface ErrorsPercentagedData {
-  code: number | null,
-  count: number,
+  code: number | null
+  count: number
   percentage: number
 }
 
@@ -12,9 +12,9 @@ export function getPercentage(data: ErrorsBody): ErrorsPercentagedData[] {
     return acc
   }, 0)
 
-  return data.map((item) => {
-    const {count} = item
-    const percentage = Math.ceil(100 * count / totalCount)
-    return {...item, percentage}
+  return data.map(item => {
+    const { count } = item
+    const percentage = Math.ceil((100 * count) / totalCount)
+    return { ...item, percentage }
   })
 }

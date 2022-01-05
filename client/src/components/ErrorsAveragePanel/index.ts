@@ -1,1 +1,1 @@
-export {default as ErrorsAveragePanel} from './ErrorsAveragePanel'
+export { default as ErrorsAveragePanel } from './ErrorsAveragePanel'

@@ -1,1 +1,1 @@
-export {default as ErrorsInfoBar} from './ErrorsInfoBar'
+export { default as ErrorsInfoBar } from './ErrorsInfoBar'

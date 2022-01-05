@@ -1,15 +1,15 @@
-import {api} from "../../../http";
+import { api } from '../../../http'
 
 export const errorFetchResponseMessage = {
   error: true,
   status: 500,
   msg: 'Something was wrong!',
-  data: []
+  data: [],
 }
 
 export const fetchData = async <T>(url: string) => {
   try {
-    const {data} = await api.get<T>(url)
+    const { data } = await api.get<T>(url)
     return data
   } catch (error) {
     return errorFetchResponseMessage

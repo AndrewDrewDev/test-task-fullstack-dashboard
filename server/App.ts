@@ -1,9 +1,9 @@
-import express, {json} from 'express'
-import router from "./routes";
+import express, { json } from 'express'
+import router from './routes'
 import cors from 'cors'
 
-import errorResponseHandler from "./error/errorResponseHandler";
-import pageNotFoundMiddleware from "./middleware/pageNotFoundMiddleware";
+import errorResponseHandler from './error/errorResponseHandler'
+import pageNotFoundMiddleware from './middleware/pageNotFoundMiddleware'
 
 const PORT = process.env.PORT || '8080'
 const app = express()
