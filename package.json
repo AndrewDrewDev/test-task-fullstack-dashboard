@@ -13,6 +13,9 @@
     "format": "prettier --write \"server/**/*.(ts|tsx|js|jsx|css|html)\" \"client/**/*.(ts|tsx|js|jsx|css|html)\"",
     "deploy": "npm run build:server && git push heroku main:master"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "keywords": [],
   "author": "Andrew Dryuk",
   "license": "ISC",
