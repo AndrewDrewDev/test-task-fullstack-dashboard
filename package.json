@@ -5,6 +5,7 @@
   "main": "./dist/App.js",
   "scripts": {
     "start": "node ./dist/App.js",
+    "install": "npm run build:server",
     "build:server": "tsc",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "nodemon ./server/App.ts",
