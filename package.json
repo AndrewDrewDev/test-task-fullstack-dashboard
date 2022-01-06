@@ -4,8 +4,8 @@
   "description": "",
   "main": "./dist/App.js",
   "scripts": {
-    "start": "node ./dist/App.js",
-    "install": "npm run build:server",
+    "start": "npm run build:server && node ./dist/App.js",
+    "dep:install": "npm i && cd client && npm i",
     "build:server": "tsc",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "nodemon ./server/App.ts",

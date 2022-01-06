@@ -1,13 +1,13 @@
 # Test Task: Full-stack dashboard app 
 
 [Link to task](https://github.com/KosyanMedia/test-tasks/tree/master/gates_team_fullstack)
+[Link to Figma template](https://www.figma.com/file/D54loPQ2rStAOTsH1vzWH5rs/Notifications)
 
-# Live Demo:
-
-TODO[Live Demo Link](#)
+# [Live Demo](https://test-task-fullstack-dashboard.netlify.app/)
 
 # Features/Stack: 
 
+- Figma
 - Typescript only;
 - Responsive layout design;
 - SCSS;
@@ -17,9 +17,10 @@ TODO[Live Demo Link](#)
 # How Start:
 
 ```shell
-# Install server/client dependencies
-npm i 
-cd client && npm i
+# Install dependencies
+
+npm run dep:install
+
 # Start Client and Server
 npm run dev
 ```
